@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Retângulo - Área, Perímetro e Diagonal</title>
+</head>
+<body>
+	<h1>Retângulo - Área, Perímetro e Diagonal</h1>
+
+	<label for="base">Base do retângulo:</label>
+	<input type="number" id="base" name="base"><br><br>
+
+	<label for="altura">Altura do retângulo:</label>
+	<input type="number" id="altura" name="altura"><br><br>
+
+	<button onclick="calcular()">Calcular</button><br><br>
+
+	<label for="area">ÁREA:</label>
+	<input type="text" id="area" name="area" readonly><br><br>
+
+	<label for="perimetro">PERÍMETRO:</label>
+	<input type="text" id="perimetro" name="perimetro" readonly><br><br>
+
+	<label for="diagonal">DIAGONAL:</label>
+	<input type="text" id="diagonal" name="diagonal" readonly><br><br>
+
+	<script>
+		function calcular() {
+			
+			var base = parseFloat(document.getElementById("base").value);
+			var altura = parseFloat(document.getElementById("altura").value);
+
+			
+			var area = (base * altura).toFixed(4);
+			var perimetro = (2 * (base + altura)).toFixed(4);
+			var diagonal = (Math.sqrt((base * base) + (altura * altura))).toFixed(4);
+
+			
+			document.getElementById("area").value = area;
+			document.getElementById("perimetro").value = perimetro;
+			document.getElementById("diagonal").value = diagonal;
+		}
+	</script>
+
+</body>
+</html>

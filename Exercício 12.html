@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Equação de Segundo Grau</title>
+	<meta charset="UTF-8">
+	<script>
+		function calcularRaizes() {
+			var a = parseFloat(document.getElementById("coeficienteA").value);
+			var b = parseFloat(document.getElementById("coeficienteB").value);
+			var c = parseFloat(document.getElementById("coeficienteC").value);
+			var delta = Math.pow(b, 2) - 4*a*c;
+
+			if (delta < 0) {
+				document.getElementById("resultado").innerHTML = "A equação não possui raízes reais.";
+			} else {
+				var x1 = (-b + Math.sqrt(delta)) / (2*a);
+				var x2 = (-b - Math.sqrt(delta)) / (2*a);
+				document.getElementById("resultado").innerHTML = "X1 = " + x1.toFixed(4) + "<br>X2 = " + x2.toFixed(4);
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Equação de Segundo Grau</h1>
+	<form>
+		<label for="coeficienteA">Coeficiente a:</label>
+		<input type="number" id="coeficienteA" name="coeficienteA" step="0.001" required><br>
+		<label for="coeficienteB">Coeficiente b:</label>
+		<input type="number" id="coeficienteB" name="coeficienteB" step="0.001" required><br>
+		<label for="coeficienteC">Coeficiente c:</label>
+		<input type="number" id="coeficienteC" name="coeficienteC" step="0.001" required><br>
+		<button type="button" onclick="calcularRaizes()">Calcular</button>
+	</form>
+	<p id="resultado"></p>
+</body>
+</html>

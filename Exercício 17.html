@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Múltiplos</title>
+  </head>
+  <body>
+    <h1>Múltiplos</h1>
+    <label for="numero1">Digite o primeiro número:</label>
+    <input type="number" id="numero1" name="numero1">
+    <br>
+    <label for="numero2">Digite o segundo número:</label>
+    <input type="number" id="numero2" name="numero2">
+    <br>
+    <button onclick="verificarMultiplos()">Verificar se são múltiplos</button>
+    <p id="resultado"></p>
+    <script>
+      function verificarMultiplos() {
+        const numero1 = parseInt(document.getElementById("numero1").value);
+        const numero2 = parseInt(document.getElementById("numero2").value);
+        if (numero1 % numero2 === 0 || numero2 % numero1 === 0) {
+          document.getElementById("resultado").textContent = "São múltiplos.";
+        } else {
+          document.getElementById("resultado").textContent = "Não são múltiplos.";
+        }
+      }
+    </script>
+  </body>
+</html>

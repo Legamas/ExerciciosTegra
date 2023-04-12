@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menor e Maior Valor</title>
+</head>
+<body>
+
+	<h1>Menor e Maior Valor</h1>
+
+	<label>Valor 1:</label>
+	<input type="number" id="valor1" required><br>
+
+	<label>Valor 2:</label>
+	<input type="number" id="valor2" required><br>
+
+	<label>Valor 3:</label>
+	<input type="number" id="valor3" required><br>
+
+	<label>Valor 4:</label>
+	<input type="number" id="valor4" required><br>
+
+	<label>Valor 5:</label>
+	<input type="number" id="valor5" required><br>
+
+	<button onclick="calcularMenorMaior()">Calcular</button>
+
+	<p id="resultado"></p>
+
+	<script>
+		function calcularMenorMaior() {
+			var valor1 = parseFloat(document.getElementById("valor1").value);
+			var valor2 = parseFloat(document.getElementById("valor2").value);
+			var valor3 = parseFloat(document.getElementById("valor3").value);
+			var valor4 = parseFloat(document.getElementById("valor4").value);
+			var valor5 = parseFloat(document.getElementById("valor5").value);
+
+			var menor = valor1;
+			var maior = valor1;
+
+			if (valor2 < menor) {
+				menor = valor2;
+			} else if (valor2 > maior) {
+				maior = valor2;
+			}
+
+			if (valor3 < menor) {
+				menor = valor3;
+			} else if (valor3 > maior) {
+				maior = valor3;
+			}
+
+			if (valor4 < menor) {
+				menor = valor4;
+			} else if (valor4 > maior) {
+				maior = valor4;
+			}
+
+			if (valor5 < menor) {
+				menor = valor5;
+			} else if (valor5 > maior) {
+				maior = valor5;
+			}
+
+			document.getElementById("resultado").innerHTML = "Menor valor: " + menor + "<br>Maior valor: " + maior;
+		}
+	</script>
+
+</body>
+</html>

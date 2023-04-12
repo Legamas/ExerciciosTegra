@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Contador de vogais e consoantes</title>
+</head>
+
+<body>
+  <h1>Contador de vogais e consoantes</h1>
+
+  <label for="palavra">Digite uma palavra:</label>
+  <input type="text" id="palavra">
+  <button onclick="contar()">Contar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function contar() {
+      let palavra = document.getElementById("palavra").value.toLowerCase();
+      let vogais = 0;
+      let consoantes = 0;
+
+      for (let i = 0; i < palavra.length; i++) {
+        let letra = palavra.charAt(i);
+        if (letra == "a" || letra == "e" || letra == "i" || letra == "o" || letra == "u") {
+          vogais++;
+        } else if (letra >= "a" && letra <= "z") {
+          consoantes++;
+        }
+      }
+
+      let resultado = document.getElementById("resultado");
+      resultado.innerHTML = "Palavra: " + palavra + "<br>";
+      resultado.innerHTML += "Vogais: " + vogais + "<br>";
+      resultado.innerHTML += "Consoantes: " + consoantes;
+    }
+  </script>
+</body>
+
+</html>

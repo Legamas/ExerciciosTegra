@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Signo</title>
+</head>
+<body>
+	<h1>Descubra o seu signo</h1>
+	<label for="dia">Dia de nascimento:</label>
+	<input type="number" id="dia" name="dia" min="1" max="31">
+	<label for="mes">Mês de nascimento:</label>
+	<input type="number" id="mes" name="mes" min="1" max="12">
+	<button onclick="calcularSigno()">Descobrir</button>
+	<p id="resultado"></p>
+
+	<script>
+		function calcularSigno() {
+			const dia = document.getElementById("dia").value;
+			const mes = document.getElementById("mes").value;
+
+			if ((mes == 3 && dia >= 21) || (mes == 4 && dia <= 20)) {
+				document.getElementById("resultado").innerHTML = "Áries";
+			} else if ((mes == 4 && dia >= 21) || (mes == 5 && dia <= 20)) {
+				document.getElementById("resultado").innerHTML = "Touro";
+			} else if ((mes == 5 && dia >= 21) || (mes == 6 && dia <= 20)) {
+				document.getElementById("resultado").innerHTML = "Gêmeos";
+			} else if ((mes == 6 && dia >= 21) || (mes == 7 && dia <= 22)) {
+				document.getElementById("resultado").innerHTML = "Câncer";
+			} else if ((mes == 7 && dia >= 23) || (mes == 8 && dia <= 22)) {
+				document.getElementById("resultado").innerHTML = "Leão";
+			} else if ((mes == 8 && dia >= 23) || (mes == 9 && dia <= 22)) {
+				document.getElementById("resultado").innerHTML = "Virgem";
+			} else if ((mes == 9 && dia >= 23) || (mes == 10 && dia <= 22)) {
+				document.getElementById("resultado").innerHTML = "Libra";
+			} else if ((mes == 10 && dia >= 23) || (mes == 11 && dia <= 21)) {
+				document.getElementById("resultado").innerHTML = "Escorpião";
+			} else if ((mes == 11 && dia >= 22) || (mes == 12 && dia <= 21)) {
+				document.getElementById("resultado").innerHTML = "Sagitário";
+			} else if ((mes == 12 && dia >= 22) || (mes == 1 && dia <= 20)) {
+				document.getElementById("resultado").innerHTML = "Capricórnio";
+			} else if ((mes == 1 && dia >= 21) || (mes == 2 && dia <= 18)) {
+				document.getElementById("resultado").innerHTML = "Aquário";
+			} else {
+				document.getElementById("resultado").innerHTML = "Peixes";
+			}
+		}
+	</script>
+</body>
+</html>

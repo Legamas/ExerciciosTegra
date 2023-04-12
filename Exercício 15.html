@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Classificação da glicose</title>
+  </head>
+  <body>
+    <h1>Classificação da glicose</h1>
+    <label for="glicose">Digite a medida da glicose:</label>
+    <input type="number" id="glicose" name="glicose">
+    <br>
+    <button onclick="classificarGlicose()">Classificar</button>
+    <p id="resultado"></p>
+    <script>
+      function classificarGlicose() {
+        const glicose = parseFloat(document.getElementById("glicose").value);
+        let classificacao = "";
+        if (glicose <= 100) {
+          classificacao = "Normal";
+        } else if (glicose <= 140) {
+          classificacao = "Elevado";
+        } else {
+          classificacao = "Diabetes";
+        }
+        document.getElementById("resultado").textContent = `Classificação: ${classificacao}`;
+      }
+    </script>
+  </body>
+</html>

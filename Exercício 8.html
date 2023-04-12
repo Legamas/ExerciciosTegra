@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora de áreas</title>
+	<script type="text/javascript">
+		function calcularAreas() {
+			let a = parseFloat(document.getElementById("a").value);
+			let b = parseFloat(document.getElementById("b").value);
+			let c = parseFloat(document.getElementById("c").value);
+
+			let areaQuadrado = a * a;
+			let areaTriangulo = (a * b) / 2;
+			let areaTrapezio = ((a + b) * c) / 2;
+
+			document.getElementById("resultado").innerHTML = "Área do quadrado: " + areaQuadrado.toFixed(4) + "<br>" +
+															 "Área do triângulo: " + areaTriangulo.toFixed(4) + "<br>" +
+															 "Área do trapézio: " + areaTrapezio.toFixed(4);
+		}
+	</script>
+</head>
+<body>
+	<label for="a">Medida A:</label>
+	<input type="number" id="a" name="a"><br>
+
+	<label for="b">Medida B:</label>
+	<input type="number" id="b" name="b"><br>
+
+	<label for="c">Medida C:</label>
+	<input type="number" id="c" name="c"><br>
+
+	<button onclick="calcularAreas()">Calcular áreas</button>
+
+	<p id="resultado"></p>
+</body>
+</html>

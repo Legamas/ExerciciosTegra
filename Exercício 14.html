@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculadora de troco</title>
+  </head>
+  <body>
+    <h1>Calculadora de troco</h1>
+    <label for="preco">Preço unitário do produto:</label>
+    <input type="number" id="preco" name="preco">
+    <br>
+    <label for="quantidade">Quantidade comprada:</label>
+    <input type="number" id="quantidade" name="quantidade">
+    <br>
+    <label for="dinheiro">Dinheiro recebido:</label>
+    <input type="number" id="dinheiro" name="dinheiro">
+    <br>
+    <button onclick="calcularTroco()">Calcular troco</button>
+    <p id="resultado"></p>
+    <script>
+      function calcularTroco() {
+        const preco = parseFloat(document.getElementById("preco").value);
+        const quantidade = parseInt(document.getElementById("quantidade").value);
+        const dinheiro = parseFloat(document.getElementById("dinheiro").value);
+        const valorTotal = preco * quantidade;
+        const troco = dinheiro - valorTotal;
+        if (troco >= 0) {
+          document.getElementById("resultado").textContent = `TROCO = R$ ${troco.toFixed(2)}`;
+        } else {
+          document.getElementById("resultado").textContent = `DINHEIRO INSUFICIENTE. FALTAM R$ ${(-troco).toFixed(2)} REAIS`;
+        }
+      }
+    </script>
+  </body>
+</html>

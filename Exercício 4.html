@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculadora de Troco</title>
+  <script>
+    function calcularTroco() {
+    
+      var precoUnitario = parseFloat(document.getElementById("precoUnitario").value);
+      var quantidade = parseInt(document.getElementById("quantidade").value);
+      var dinheiroRecebido = parseFloat(document.getElementById("dinheiroRecebido").value);
+
+      
+      var totalCompra = precoUnitario * quantidade;
+      var troco = dinheiroRecebido - totalCompra;
+
+     
+      document.getElementById("totalCompra").innerHTML = totalCompra.toFixed(2);
+      document.getElementById("troco").innerHTML = troco.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <h1>Calculadora de Troco</h1>
+
+  <form>
+    <label for="precoUnitario">Preço unitário do produto:</label>
+    <input type="number" step="0.01" id="precoUnitario"><br>
+
+    <label for="quantidade">Quantidade comprada:</label>
+    <input type="number" id="quantidade"><br>
+
+    <label for="dinheiroRecebido">Dinheiro recebido:</label>
+    <input type="number" step="0.01" id="dinheiroRecebido"><br>
+
+    <button type="button" onclick="calcularTroco()">Calcular Troco</button>
+  </form>
+
+  <p>Total da Compra: R$<span id="totalCompra">0.00</span></p>
+  <p>Troco: R$<span id="troco">0.00</span></p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Converter duração em segundos para horas:minutos:segundos</title>
+  </head>
+  <body>
+    <h1>Converter duração em segundos para horas:minutos:segundos</h1>
+    <label for="duracaoSegundos">Digite a duração em segundos:</label>
+    <input type="number" id="duracaoSegundos" name="duracaoSegundos">
+    <br><br>
+    <button onclick="converter()">Converter</button>
+    <br><br>
+    <label for="duracaoFormatada">Duração formatada:</label>
+    <input type="text" id="duracaoFormatada" name="duracaoFormatada" readonly>
+    
+    <script>
+      function converter() {
+        const duracaoSegundos = parseInt(document.getElementById("duracaoSegundos").value);
+        
+        const horas = Math.floor(duracaoSegundos / 3600);
+        const minutos = Math.floor((duracaoSegundos - (horas * 3600)) / 60);
+        const segundos = duracaoSegundos - (horas * 3600) - (minutos * 60);
+        
+        const duracaoFormatada = `${horas}:${minutos}:${segundos}`;
+        document.getElementById("duracaoFormatada").value = duracaoFormatada;
+      }
+    </script>
+  </body>
+</html>

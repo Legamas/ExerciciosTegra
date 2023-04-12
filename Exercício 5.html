@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora de raio</title>
+	<script type="text/javascript">
+		function calcularArea() {
+			let raio = parseFloat(document.getElementById("raio").value);
+			let area = Math.PI * Math.pow(raio, 2);
+			document.getElementById("resultado").innerHTML = "A área do círculo é: " + area.toFixed(3);
+		}
+	</script>
+</head>
+<body>
+	<label for="raio">Digite o valor do raio do círculo:</label>
+	<input type="number" id="raio" name="raio" step="0.01">
+	<button onclick="calcularArea()">Calcular área</button>
+	<p id="resultado"></p>
+</body>
+</html>

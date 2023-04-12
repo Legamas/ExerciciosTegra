@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculadora de plano telefônico</title>
+  </head>
+  <body>
+    <h1>Calculadora de plano telefônico</h1>
+    <label for="minutos">Digite a quantidade de minutos:</label>
+    <input type="number" id="minutos" name="minutos">
+    <button onclick="calcularValor()">Calcular</button>
+    <p id="resultado"></p>
+    <script>
+      function calcularValor() {
+        const minutos = parseInt(document.getElementById("minutos").value);
+        let valorAPagar = 50.00;
+        if (minutos > 100) {
+          const minutosExcedentes = minutos - 100;
+          valorAPagar += minutosExcedentes * 2.00;
+        }
+        document.getElementById("resultado").textContent = `Valor a pagar: R$ ${valorAPagar.toFixed(2)}`;
+      }
+    </script>
+  </body>
+</html>

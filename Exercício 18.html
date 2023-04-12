@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Conversor de temperatura</title>
+  </head>
+  <body>
+    <script>
+      let escala = prompt("Você vai digitar a temperatura em qual escala (C/F)?");
+      let temp;
+
+      if (escala == "C") {
+        temp = parseFloat(prompt("Digite a temperatura em Celsius:"));
+        let tempF = (temp * 9/5) + 32;
+        console.log("Temperatura equivalente em Fahrenheit: " + tempF.toFixed(2));
+      } else if (escala == "F") {
+        temp = parseFloat(prompt("Digite a temperatura em Fahrenheit:"));
+        let tempC = (temp - 32) * 5/9;
+        console.log("Temperatura equivalente em Celsius: " + tempC.toFixed(2));
+      } else {
+        console.log("Opção inválida.");
+      }
+    </script>
+  </body>
+</html>

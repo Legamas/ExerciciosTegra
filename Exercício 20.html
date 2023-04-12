@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Soma de Intervalo</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Soma de Intervalo</h1>
+
+	<p>Insira um número inicial e final para calcular a soma de todos os números entre eles:</p>
+
+	<label for="numero-inicial">Número Inicial:</label>
+	<input type="number" id="numero-inicial">
+
+	<label for="numero-final">Número Final:</label>
+	<input type="number" id="numero-final">
+
+	<button onclick="calcularSoma()">Calcular Soma</button>
+
+	<p id="resultado"></p>
+
+	<script>
+		function calcularSoma() {
+			let numeroInicial = parseInt(document.getElementById("numero-inicial").value);
+			let numeroFinal = parseInt(document.getElementById("numero-final").value);
+			let soma = 0;
+
+			for (let i = numeroInicial; i <= numeroFinal; i++) {
+				soma += i;
+			}
+
+			document.getElementById("resultado").innerHTML = "Resultado: " + soma;
+		}
+	</script>
+</body>
+</html>

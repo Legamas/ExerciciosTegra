@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Aumento Salarial</title>
+  </head>
+  <body>
+    <h1>Aumento Salarial</h1>
+    <label>Digite o salário da pessoa:</label>
+    <input type="number" id="salario" step="0.01"><br><br>
+    <button onclick="calcularAumento()">Calcular</button><br><br>
+    <label>Novo salário:</label>
+    <input type="text" id="novoSalario" disabled><br>
+    <label>Aumento:</label>
+    <input type="text" id="aumento" disabled><br>
+    <label>Porcentagem de aumento:</label>
+    <input type="text" id="porcentagem" disabled>
+    
+    <script>
+      function calcularAumento() {
+        let salario = parseFloat(document.getElementById("salario").value);
+        let novoSalario, aumento, porcentagem;
+        if (salario <= 999) {
+          porcentagem = 20;
+        } else if (salario >= 1000 && salario <= 2999) {
+          porcentagem = 15;
+        } else if (salario >= 3000 && salario <= 7999) {
+          porcentagem = 10;
+        } else {
+          porcentagem = 5;
+        }
+        aumento = salario * porcentagem / 100;
+        novoSalario = salario + aumento;
+        document.getElementById("novoSalario").value = novoSalario.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        document.getElementById("aumento").value = aumento.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+        document.getElementById("porcentagem").value = porcentagem + " %";
+      }
+    </script>
+  </body>
+</html>

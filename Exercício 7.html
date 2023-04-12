@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculadora de consumo de combustível</title>
+	<script type="text/javascript">
+		function calcularConsumo() {
+			let distancia = parseFloat(document.getElementById("distancia").value);
+			let combustivel = parseFloat(document.getElementById("combustivel").value);
+			let consumoMedio = distancia / combustivel;
+			document.getElementById("resultado").innerHTML = "Consumo médio: " + consumoMedio.toFixed(3) + " km/l";
+		}
+	</script>
+</head>
+<body>
+	<label for="distancia">Distância percorrida (km):</label>
+	<input type="number" id="distancia" name="distancia"><br>
+
+	<label for="combustivel">Combustível gasto (l):</label>
+	<input type="number" id="combustivel" name="combustivel"><br>
+
+	<button onclick="calcularConsumo()">Calcular consumo</button>
+
+	<p id="resultado"></p>
+</body>
+</html>

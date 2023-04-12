@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Média de Idade</title>
+</head>
+<body>
+	<h1>Média de Idade</h1>
+
+	<label for="nome1">Nome da primeira pessoa:</label>
+	<input type="text" id="nome1"><br>
+
+	<label for="idade1">Idade da primeira pessoa:</label>
+	<input type="number" id="idade1"><br>
+
+	<label for="nome2">Nome da segunda pessoa:</label>
+	<input type="text" id="nome2"><br>
+
+	<label for="idade2">Idade da segunda pessoa:</label>
+	<input type="number" id="idade2"><br>
+
+	<button onclick="calcularMedia()">Calcular Média</button>
+
+	<p id="resultado"></p>
+
+	<script>
+		function calcularMedia() {
+			
+			let nome1 = document.getElementById("nome1").value;
+			let idade1 = parseInt(document.getElementById("idade1").value);
+			let nome2 = document.getElementById("nome2").value;
+			let idade2 = parseInt(document.getElementById("idade2").value);
+
+			let media = (idade1 + idade2) / 2;
+
+			let resultado = document.getElementById("resultado");
+			resultado.innerHTML = `A idade média de ${nome1} e ${nome2} é de ${media.toFixed(1)} anos.`;
+		}
+	</script>
+</body>
+</html>
